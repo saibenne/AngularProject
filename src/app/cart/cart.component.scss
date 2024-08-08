@@ -1,0 +1,63 @@
+.cartContainer {
+    min-height: 80vh;
+    background: url("/src/assets/shoe-orange.png");
+    .emptyCart{
+        
+        font-size: 500%;
+        position: absolute;
+        top:25%;
+        left:15%;
+        opacity: 0.2;
+    }
+    .cart{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    
+    table {
+
+        width: 90%;
+        box-shadow: inset 1px 1px white , 1px 1px 5px grey;
+        border-radius:10px;
+        thead{
+           tr{
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+           }
+        }
+        tr {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(0,0,0,0.1);
+            }
+            tr:nth($list: tr, $n:1 ){
+                background-color: red;
+            }
+            td,
+            th {
+
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                align-items: center;
+                padding: 1% 0%;
+            }
+            td{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+    }
+
+    p {
+        text-align: center;
+    }
+}
+}

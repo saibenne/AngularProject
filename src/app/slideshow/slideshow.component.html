@@ -1,0 +1,22 @@
+<div class="slideshow" *ngIf="products.length">
+    <div class="slide" [ngStyle]="{'right':currentIndex*100+'%'}">
+        @for (item of products; track $index) {
+        <div class="product" >
+            <div class="productImg" >
+                <img [src]="item.imgURL" />
+                
+            </div>
+            <div class="productData">
+                <h1>{{item.name}}</h1>
+                <p>price:{{item.price}}</p>
+            </div>
+        </div>
+    }
+
+
+    </div>
+    <div class="navBtn">
+        <button class="prev" (click)="previousSlide()">&#10094;</button>
+        <button class="next" (click)="nextSlide()">&#10095;</button>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+@import '../app.component.scss';
+.signUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 80vh;
+    .signUp {
+        background-color: rgba($color: #000, $alpha: 0);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        padding: 3% 4%;
+        border:0px solid;
+        border-radius: 10px;
+        transition: 0.1s;
+        box-shadow: inset 1px 1px white , 1px 1px 5px grey;
+        @include formStyle;
+    }
+    .signUp:hover{
+        box-shadow: inset 1px 1px 5px grey,1px 1px 2px white;
+        transform: scale(1);
+    }
+    .navBtn{
+        border:none;
+        background-color: white;
+        cursor: pointer;
+    }
+    
+}

@@ -1,0 +1,39 @@
+@mixin formStyle{
+    .formData {
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        font-weight: bold;
+        input{
+            width: 100%;
+            padding: 3%;
+            box-sizing: border-box;
+            border:1px solid black;
+            
+        }
+        input:focus{
+            outline: none;
+            background-color: rgba($color: #000, $alpha: 0.1);
+            border:2px solid;
+        }
+        
+    }
+    .submit{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:10% 0%;
+        width: 100%;
+        button{
+            padding: 3% 5%;
+            width: 100%;
+            font-weight: bold;
+            border: 2px solid;
+            cursor: pointer;
+        }
+    }
+}
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,77 @@
+@import "../products/products.component.scss";
+.slideshow{
+    position: relative;
+    overflow: hidden;
+    .slide{
+        
+        transition: 1s;
+        display: flex;
+        position: relative;
+        width: 500%;
+        .product {
+            margin:0.1%;
+            box-shadow: 1px 1px 5px grey;
+            border-radius: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+            transition: 0.5s;
+            background: linear-gradient(grey 50%, rgba(0, 0, 0, 0.8) 50%);
+            .productImg {
+                
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 50%;
+                   
+                    transition: 0.5s;
+    
+                }
+    
+            }
+           
+    
+            .productData {
+                color: white;
+                position: relative;
+                left:-20%;
+                h1{
+                    font-size: 5vw;
+                }
+                p{
+                    font-size: 2vw;
+                }
+                
+    
+            }}
+        
+    }
+    .navBtn{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        position:absolute;
+        top:50%;
+        transform: translateY(-100%);
+        
+        button{
+            
+            border: none;
+            transform: scaleY(5);
+            font-size: 3vw;
+            color: orangered;
+            background-color: rgba(0,0,0,0.1);
+            height: 100%;
+            opacity: 0.2;
+            width: 10%;
+            cursor: pointer;
+        }
+        .prev,.next{
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}

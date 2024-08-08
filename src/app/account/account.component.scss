@@ -1,0 +1,38 @@
+@import '../app.component.scss';
+
+.accountContainer {
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 1% 0%;
+    .account {
+        width: fit-content;
+        box-sizing: 1px 1px 1px grey;
+        padding: 5%;
+        width:50%;
+       
+        box-shadow: inset 1px 1px white , 1px 1px 5px grey;
+       
+        h1 {
+            text-align: center;
+        }
+        
+
+        @include formStyle();
+        .formData{
+            input{
+                padding: 2%;
+            }
+        }
+        .submit {
+            width: 100%;
+            margin: 2% 0%;
+            button{
+                padding: 2%;
+            }
+        }
+    }
+}

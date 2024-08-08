@@ -1,0 +1,36 @@
+<div class="cartContainer">
+  <div class="cart" *ngIf="cartItems.size>0; else emptyCart">
+   <table>
+      <thead>
+         <tr>
+            
+            <th>ID</th>
+            <th></th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th colspan="2">ADD/REMOVE</th>
+
+         </tr>
+      </thead>
+      <tbody>
+         @for (item of cartItems.values(); track $index) {
+         <tr>
+            <td>{{item.id}}</td>
+            <td><img [src]="item.imgURL"/></td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.count}}</td>
+            <td><button (click)="addProduct(item)">+</button>
+               <button (click)="removeProduct(item.id)">-</button>
+            </td>
+         </tr>
+
+         }
+      </tbody>
+   </table>
+</div>
+<ng-template #emptyCart>
+   <h1 class="emptyCart">Your Cart is empty</h1>
+</ng-template>
+</div>

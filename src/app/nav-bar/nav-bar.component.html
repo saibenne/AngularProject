@@ -1,0 +1,12 @@
+<div class="nav-bar">
+    <div class="title">
+        {{title}}
+    </div>
+    <div class="menu">
+        <ul>
+            @for (item of menu; track $index) {
+                <li [routerLink]="'./'+item.toLowerCase()" routerLinkActive="active">{{item}}</li>
+            }
+        </ul>
+    </div>
+</div>

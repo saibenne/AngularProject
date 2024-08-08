@@ -1,0 +1,24 @@
+<div class="products">
+    @for (item of products; track $index) {
+    <div class="product">
+        <div class="productImg">
+            <img [src]="item.imgURL" />
+            <h1>{{item.name}}</h1>
+        </div>
+        <div class="productData">
+            <ul>
+                <li>ID:{{item.id}}</li>
+                <li>NAME:{{item.name}}</li>
+                <li>PRICE:{{item.price}}</li>
+            </ul>
+        </div>
+        @if (!avilableInCart(item.id)) {
+            <button (click)="addProductToCart(item)" [ngStyle]="{'backgroundColor':'black'}">Add</button>
+        }
+        @else {
+            <button (click)="removeProductFromCart(item.id)" [ngStyle]="{'backgroundColor':'orangered'}">Remove</button>
+        }
+
+    </div>
+    }
+</div>

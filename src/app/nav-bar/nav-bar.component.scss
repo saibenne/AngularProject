@@ -1,0 +1,38 @@
+@mixin flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-bar{
+    @include flex;
+    padding: 1% 0%;
+    position: sticky;
+    top:0px;
+    z-index: 2;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    .title{
+        font-size: clamp(20px,2vw,3vw);
+    }
+    .menu{
+        width:50%;
+        ul{
+            @include flex;
+            width: 100%;
+            padding: 0px;
+            li{
+                @include flex;
+                list-style: none;
+                font-weight: bold;
+                cursor: pointer;
+                width: 100%;
+                padding: 1%;
+                border-radius: 10px;
+            }
+            li.active{
+                background-color: orangered;
+            }
+        }
+    }
+}

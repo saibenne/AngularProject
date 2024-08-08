@@ -1,0 +1,22 @@
+<div class="signInContainer">
+    <div class="signIn">
+        <h1>SignIn</h1>
+        <form (ngSubmit)="signIn()" #formInstance="ngForm">
+            <div class="formData">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" [(ngModel)]="user.email" name="email" required />
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" [(ngModel)]="user.password" name="password" required />
+                </div>
+            </div>
+            <div class="submit">
+                <button type="submit" [disabled]="!formInstance.form.valid">SignIn</button>
+            </div>
+            
+        </form>
+        <button (click)="navigateToSignup()" class="navBtn">Don't have an account?</button>
+    </div>
+</div>
