@@ -43,10 +43,12 @@ export class UserDbService {
     }
     return undefined;
   }
-  updateUserData(email:string,userData:UserData){
+  updateUserData(email:string,userData:UserData):boolean{
     if(this.userDataDb.has(email)){
       this.userDataDb.set(email,userData);
+      return true;
     }
+    return false;
   }
   updateCart(email:string,cart:Map<number, { id: number,imgURL:string, name: string, price: number, count: number}>){
     this.cartDb.set(email,new Map(cart));

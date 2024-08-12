@@ -83,6 +83,12 @@
         &:hover .productImg h1 {
             top: 50%;
         }
-
+        @media screen and (max-width:650px){
+            width: 40%;
+            .productImg h1{
+                font-size: 5vw;
+            }
+        }
     }
+    
 }

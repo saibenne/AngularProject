@@ -1,7 +1,37 @@
 <div class="nav-bar">
-    <div class="title">
-        {{title}}
-    </div>
+    @if(isMobile){
+        <div class="menuBar">
+            <div class="title">
+                {{title}}
+            </div>
+            <div class="toggle">
+                <button (click)="toggleMenu()">
+                    @if(isMenuOpen){
+                        <fa-icon [icon]="faTimes" [style]="{'color':'orangered'}"></fa-icon>
+                    }
+                    @else {
+                        <fa-icon [icon]="faBars"></fa-icon>
+                    }
+                </button>
+            </div>
+        </div>
+    }
+    @else {
+        <div class="title">
+            {{title}}
+        </div>
+    }
+    
+    @if(isMobile){
+        <div class="menu" [style]="{'height':!isMenuOpen?'0px':'400%'}">
+            <ul>
+                @for (item of menu; track $index) {
+                    <li [routerLink]="'./'+item.toLowerCase()" routerLinkActive="active">{{item}}</li>
+                }
+            </ul>
+        </div>
+    }
+    @else {
     <div class="menu">
         <ul>
             @for (item of menu; track $index) {
@@ -9,4 +39,9 @@
             }
         </ul>
     </div>
+}
+
 </div>
+<ng-template #menuBar>
+    
+</ng-template>

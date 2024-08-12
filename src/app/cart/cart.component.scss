@@ -2,11 +2,8 @@
     min-height: 80vh;
     background: url("/src/assets/shoe-orange.png");
     .emptyCart{
-        
-        font-size: 500%;
-        position: absolute;
-        top:25%;
-        left:15%;
+        text-align: center;
+        font-size: 5vw;
         opacity: 0.2;
     }
     .cart{

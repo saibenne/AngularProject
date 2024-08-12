@@ -6,7 +6,7 @@
                 <h1>Welcome {{userData.name||activeUser.email}}</h1>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" [(ngModel)]="activeUser.email" name="email" readonly />
+                    <input type="email" [(ngModel)]="userData.email" name="email" readonly />
                 </div>
                 <div>
                     <label for="name">Name</label>

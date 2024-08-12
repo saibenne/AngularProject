@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { UserDbService } from '../user-db.service';
 import { NgIf } from '@angular/common';
-import { Observable } from 'rxjs';
 import { UserData } from '../userDataInterface';
 import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../userInterface';
@@ -35,8 +34,9 @@ export class AccountComponent implements OnInit{
         if(this.tempUserData){
           this.userData=this.tempUserData;
         }
-          this.activeUser.email=user.email;
-          this.userData.email=user.email;
+        let userEmail:string=user.email;
+          this.activeUser.email=userEmail.substring(0,userEmail.indexOf('@'));
+          this.userData.email=userEmail;
         });
         
        }
@@ -46,10 +46,11 @@ export class AccountComponent implements OnInit{
     })
     
   }
+ 
 
   updateUserData(){
-    this.userDbService.updateUserData(this.activeUser.email,this.userData??{} as UserData);
-   
+    let status:boolean=this.userDbService.updateUserData(this.activeUser.email,this.userData??{} as UserData);
+    alert(status?"user details updated successfully...":"user details not updated..")
   }
   signOut(){
     this.authService.signOut();
